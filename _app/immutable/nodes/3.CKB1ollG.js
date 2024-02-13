@@ -1,4 +1,4 @@
-import{s as v,n as r}from"../chunks/scheduler.0YVsYd9s.js";import{S as _,i as d,e as p,s as x,t as C,c as f,g as h,a as b,b as j,d as l,f as o}from"../chunks/index.BY_Cp616.js";function T(u){let e,m="Welcome to SvelteKit",n,s,c='Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation',a;return{c(){e=p("h1"),e.textContent=m,n=x(),s=p("p"),s.innerHTML=c,a=C(`\r
+import{s as v,n as r}from"../chunks/scheduler.0YVsYd9s.js";import{S as _,i as d,e as p,s as x,t as C,c as f,g as h,a as b,b as j,d as l,f as o}from"../chunks/index.CaP1f4Ga.js";function T(u){let e,m="Welcome to SvelteKit",n,s,c='Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation',a;return{c(){e=p("h1"),e.textContent=m,n=x(),s=p("p"),s.innerHTML=c,a=C(`\r
 \r
 \r
 \r
