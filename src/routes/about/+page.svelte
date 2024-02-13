@@ -2,5 +2,5 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 
-This is the main page.svelte file
 
+This is in the about file
