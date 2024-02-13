@@ -1,5 +1,6 @@
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 // import adapter from '@sveltejs/adapter-auto';
-import adapter from "@sveltejs/adapter-static";
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,9 +10,11 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === "production" ? "/poppoll" : "",
-			},
-	}
+			base: process.env.NODE_ENV === 'production' ? '/poppoll' : ''
+		}
+	},
+
+	preprocess: [vitePreprocess({})]
 };
 
 export default config;
