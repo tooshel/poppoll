@@ -5,23 +5,28 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.4IN2gBoU.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.B_MPXIeO.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.BvLojk_z.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.DshfEk7E.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.DI2a_zYT.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.CE450L6h.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.DY8yXsKc.js">
+		<link href="./_app/immutable/assets/0.EhSbE1CH.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.C6Sdi-O4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.oOIVeGm8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.0YVsYd9s.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.SRqsiQjw.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.BY_Cp616.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.SLH1cU8V.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.BP-3IkU2.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">  <h1 data-svelte-h="svelte-yyjjjs">Welcome to SvelteKit</h1> <p data-svelte-h="svelte-jl9sbz">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 
-This is the main page.svelte file 
+This is the main page.svelte file
+
+
+
+ <main><canvas></canvas></main> 
 			
 			<script>
 				{
-					__sveltekit_10nr7vh = {
+					__sveltekit_wki7o5 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/poppoll"
 					};
@@ -31,8 +36,8 @@ This is the main page.svelte file
 					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.4IN2gBoU.js"),
-						import("./_app/immutable/entry/app.DshfEk7E.js")
+						import("./_app/immutable/entry/start.C6Sdi-O4.js"),
+						import("./_app/immutable/entry/app.SRqsiQjw.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
