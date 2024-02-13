@@ -4,3 +4,13 @@
 
 This is the main page.svelte file
 
+
+
+<script>
+    import Chart from '../components/chart.svelte';
+</script>
+  
+<main>
+  <Chart />
+</main>
+  
