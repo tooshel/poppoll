@@ -1,19 +1,15 @@
 <script>
     // import Chart from '../components/chart.svelte';
-    import { onMount } from 'svelte';
+    import { onMount, afterUpdate, beforeUpdate } from 'svelte';
     
     const samplebardata = [22, 1, 3, 5, 2];
     const sampletitles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
 
-    export let bardata = [22, 1, 3, 5, 2];
-    export var titles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
-
     import { Bar } from 'svelte-chartjs';
     import { data } from '../components/data.js';
-  
-    data.datasets[0].data = bardata;
-    data.labels = titles;
-
+ 
+    export let bardata = [];
+    export var titles = [];
     import {
       Chart,
       Title,
@@ -24,31 +20,34 @@
       LinearScale,
     } from 'chart.js';
   
+    let count = 0;
+
     Chart.register(
-      Title,
-      Tooltip,
-      Legend,
-      BarElement,
-      CategoryScale,
-      LinearScale
+            Title,
+            Tooltip,
+            Legend,
+            BarElement,
+            CategoryScale,
+            LinearScale
     );
-
-
     function newvote(index) {
         console.log('newvote', index);
-        bardata[index] = bardata[index] + 1;
-        data.datasets[0].data = bardata;
-        bardata = bardata;
+        if(bardata[index] !== undefined) {
+            bardata[index] = bardata[index] + 1;
+            data.datasets[0].data = bardata;
+            window.localStorage.setItem("bardata", JSON.stringify(bardata));
+            bardata = bardata;
+        }
     }
 
     function clearvotes(index) {
         console.log('clearvotes', index);
         data.datasets[0].data = bardata;
         bardata[index] = 0;
+        window.localStorage.setItem("bardata", JSON.stringify(bardata));
         bardata = bardata;
     }
 
-    var count = 0;
 
     function addnew() {
         console.log('addnew');
@@ -58,6 +57,8 @@
         data.labels = titles;
         titles = titles;
         bardata = bardata;
+        window.localStorage.setItem("bardata", JSON.stringify(bardata));
+        window.localStorage.setItem("titles", JSON.stringify(titles));
     }
 
     function remove() {
@@ -66,6 +67,10 @@
         bardata.pop();
         titles = titles;
         bardata = bardata;
+        data.datasets[0].data = bardata;
+        data.labels = titles;
+        window.localStorage.setItem("bardata", JSON.stringify(bardata));
+        window.localStorage.setItem("titles", JSON.stringify(titles));
     }
 
     function loadsample() {
@@ -74,15 +79,45 @@
         titles = structuredClone(sampletitles);
         data.datasets[0].data = bardata;
         data.labels = titles;
-        console.log('load sample data', samplebardata, sampletitles, bardata, titles);
+        window.localStorage.clear();
+        window.localStorage.setItem("bardata", JSON.stringify(bardata));
+        window.localStorage.setItem("titles", JSON.stringify(titles));
+        // console.log('load sample data', samplebardata, sampletitles, bardata, titles);
     }
 
+	afterUpdate(() => {
+		console.log('the component just updated');
+	});
+	beforeUpdate(() => {
+		console.log('the component is about to update');
+	});    
+
+
     onMount(() => {
+        console.log('onMount');
+        if (window.localStorage.getItem("bardata")) {
+            bardata = JSON.parse(window.localStorage.getItem("bardata"));
+        } else {
+            bardata = structuredClone(samplebardata);
+        }
+
+        if (window.localStorage.getItem("titles")) {
+            titles = JSON.parse(window.localStorage.getItem("titles"));
+        } else {
+            titles = structuredClone(sampletitles);
+        }
+
+        data.datasets[0].data = bardata;
+        data.labels = titles;
+
         window.addEventListener("keypress", (event) => {
             if (event.key >= 1 && event.key <= 9) {
-                newvote(event.key);
+                newvote(event.key-1);
             }
         });
+
+        
+
     });
 
 </script>
@@ -124,8 +159,8 @@
         </div>
 
         <button type="button" class="btn btn-primary btn-space m-1" on:click={addnew}>Add</button>
-        <button type="button" class="btn btn-primary btn-space m-1" on:click={remove}>Remove</button>
-        <button type="button" class="btn btn-primary btn-space m-1" on:click={loadsample}>Sample</button>
+        <button type="button" class="btn btn-secondary btn-space m-1" on:click={remove}>Remove</button>
+        <button type="button" class="btn btn-secondary  m-1" on:click={loadsample}>Sample</button>
 
 
 
