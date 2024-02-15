@@ -1,31 +1,58 @@
 <script>
-    import Chart from '../components/chart.svelte';
-
-    export let bardata = [22, 1, 3, 5, 2, 33];
-
+    // import Chart from '../components/chart.svelte';
+    import { onMount } from 'svelte';
+    
+    export let bardata = [22, 1, 3, 5, 2];
     export var titles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
 
-   
+    import { Bar } from 'svelte-chartjs';
+    import { data } from '../components/data.js';
+  
+    data.datasets[0].data = bardata;
+    data.labels = titles;
+
+    import {
+      Chart,
+      Title,
+      Tooltip,
+      Legend,
+      BarElement,
+      CategoryScale,
+      LinearScale,
+    } from 'chart.js';
+  
+    Chart.register(
+      Title,
+      Tooltip,
+      Legend,
+      BarElement,
+      CategoryScale,
+      LinearScale
+    );
 
 
     function newvote(index) {
         console.log('newvote', index);
         bardata[index] = bardata[index] + 1;
+        data.datasets[0].data = bardata;
         bardata = bardata;
     }
 
     function clearvotes(index) {
         console.log('clearvotes', index);
-        //bardata[index] = 0;
+        data.datasets[0].data = bardata;
+        bardata[index] = 0;
         bardata = bardata;
     }
-    var count = 0;
 
+    var count = 0;
 
     function addnew() {
         console.log('addnew');
-        titles.push('Shelly Shel');
+        titles.push('NEW');
         bardata.push(0);
+        data.datasets[0].data = bardata;
+        data.labels = titles;
         titles = titles;
         bardata = bardata;
     }
@@ -38,6 +65,14 @@
         bardata = bardata;
     }
 
+    onMount(() => {
+        window.addEventListener("keypress", (event) => {
+            if (event.key >= 1 && event.key <= 9) {
+                newvote(event.key);
+            }
+        });
+    });
+
 </script>
 
 <svelte:head>
@@ -48,11 +83,9 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
 
-  
+        <Bar {data} options={{ responsive: true }} />
 
-       <Chart />
-
-       <!-- {@debug(titles)} -->
+        <!-- {@debug(titles)} -->
 
        <button on:click={() => (count += 1)}>
             count: {count}
