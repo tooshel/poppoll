@@ -2,6 +2,9 @@
     // import Chart from '../components/chart.svelte';
     import { onMount } from 'svelte';
     
+    const samplebardata = [22, 1, 3, 5, 2];
+    const sampletitles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
+
     export let bardata = [22, 1, 3, 5, 2];
     export var titles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
 
@@ -65,6 +68,15 @@
         bardata = bardata;
     }
 
+    function loadsample() {
+        console.log('load sample data');
+        bardata = structuredClone(samplebardata);
+        titles = structuredClone(sampletitles);
+        data.datasets[0].data = bardata;
+        data.labels = titles;
+        console.log('load sample data', samplebardata, sampletitles, bardata, titles);
+    }
+
     onMount(() => {
         window.addEventListener("keypress", (event) => {
             if (event.key >= 1 && event.key <= 9) {
@@ -113,6 +125,7 @@
 
         <button type="button" class="btn btn-primary btn-space m-1" on:click={addnew}>Add</button>
         <button type="button" class="btn btn-primary btn-space m-1" on:click={remove}>Remove</button>
+        <button type="button" class="btn btn-primary btn-space m-1" on:click={loadsample}>Sample</button>
 
 
 
