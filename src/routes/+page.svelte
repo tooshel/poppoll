@@ -106,6 +106,7 @@
 
         data.datasets[0].data = bardata;
         data.labels = titles;
+        data = data;
         
         window.addEventListener("keypress", (event) => {
             if (event.key >= 1 && event.key <= 9) {
