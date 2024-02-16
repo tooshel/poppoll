@@ -8,7 +8,7 @@
     import { Bar } from 'svelte-chartjs';
     import { data } from '../components/data.js';
 
-
+    import {Pencil, EraserFill} from "svelte-bootstrap-icons";
 
     export let bardata = [];
     export var titles = [];
@@ -90,20 +90,6 @@
         // console.log('load sample data', samplebardata, sampletitles, bardata, titles);
     }
 
-    function testload(testdata) {
-        console.log('testload', testdata);
-        data.datasets[0].data = bardata;
-        data.labels = titles;
-    }
-
-	afterUpdate(() => {
-		console.log('the component just updated');
-	});
-	beforeUpdate(() => {
-		console.log('the component is about to update');
-	});    
-
-
     onMount(() => {
         console.log('onMount');
         if (window.localStorage.getItem("bardata")) {
@@ -126,7 +112,6 @@
                 newvote(event.key-1);
             }
         });
-
         
 
     });
@@ -158,8 +143,9 @@
                             <p class="card-text">{name}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-primary btn-space votebutton" on:click={() => newvote(index)}>Vote!</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary clearbutton" on:click={() => clearvotes(index)}>Clear</button>
+                                        <button type="button" class="btn btn-sm btn-primary btn-space" on:click={() => newvote(index)}>Vote!</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary btn-space" on:click={() => clearvotes(index)}><EraserFill /></button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><Pencil /></button>
                                     </div>
                                     <!-- <small class="text-body-secondary">9 mins</small> -->
                                 </div>
