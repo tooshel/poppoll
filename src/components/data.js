@@ -1,11 +1,11 @@
 
 
 export const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
       {
         label: '% of Votes',
-        data: [12, 23, 3, 5, 2, 3],
+        // data: [12, 23, 3, 5, 2, 3],
         backgroundColor: [
           'rgba(255, 134,159,0.4)',
           'rgba(98,  182, 239,0.4)',

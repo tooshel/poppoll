@@ -7,11 +7,15 @@
 
     import { Bar } from 'svelte-chartjs';
     import { data } from '../components/data.js';
- 
+
+
+
     export let bardata = [];
     export var titles = [];
+
+    // import Chart from 'chart.js/auto';
     import {
-      Chart,
+      Chart as ChartJS,
       Title,
       Tooltip,
       Legend,
@@ -20,16 +24,17 @@
       LinearScale,
     } from 'chart.js';
   
+    ChartJS.register(
+        Title,
+        Tooltip,
+        Legend,
+        BarElement,
+        CategoryScale,
+        LinearScale
+    );
+
     let count = 0;
 
-    Chart.register(
-            Title,
-            Tooltip,
-            Legend,
-            BarElement,
-            CategoryScale,
-            LinearScale
-    );
     function newvote(index) {
         console.log('newvote', index);
         if(bardata[index] !== undefined) {
@@ -73,8 +78,8 @@
         window.localStorage.setItem("titles", JSON.stringify(titles));
     }
 
-    function loadsample() {
-        console.log('load sample data');
+    function loadsample(testdata) {
+        console.log('load sample data', testdata);
         bardata = structuredClone(samplebardata);
         titles = structuredClone(sampletitles);
         data.datasets[0].data = bardata;
@@ -83,6 +88,12 @@
         window.localStorage.setItem("bardata", JSON.stringify(bardata));
         window.localStorage.setItem("titles", JSON.stringify(titles));
         // console.log('load sample data', samplebardata, sampletitles, bardata, titles);
+    }
+
+    function testload(testdata) {
+        console.log('testload', testdata);
+        data.datasets[0].data = bardata;
+        data.labels = titles;
     }
 
 	afterUpdate(() => {
@@ -109,7 +120,7 @@
 
         data.datasets[0].data = bardata;
         data.labels = titles;
-
+        
         window.addEventListener("keypress", (event) => {
             if (event.key >= 1 && event.key <= 9) {
                 newvote(event.key-1);
