@@ -11,7 +11,9 @@
     import {Pencil, EraserFill} from "svelte-bootstrap-icons";
 
     export let bardata = [];
-    export var titles = [];
+    export let titles = [];
+
+    export let chart;
 
     // import Chart from 'chart.js/auto';
     import {
@@ -23,7 +25,7 @@
       CategoryScale,
       LinearScale,
     } from 'chart.js';
-  
+
     ChartJS.register(
         Title,
         Tooltip,
@@ -107,6 +109,7 @@
         data.datasets[0].data = bardata;
         data.labels = titles;
         data = data;
+        chart.update();
         
         window.addEventListener("keypress", (event) => {
             if (event.key >= 1 && event.key <= 9) {
@@ -127,7 +130,7 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
 
-        <Bar {data} options={{ responsive: true }} />
+        <Bar bind:chart {data} options={{ responsive: true }} />
 
         <!-- {@debug(titles)} -->
 
