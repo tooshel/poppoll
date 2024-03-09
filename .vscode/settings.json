@@ -1,5 +1,6 @@
 {
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
-	}
+	},
+	"cSpell.words": ["bardata", "chartstore", "popperjs", "poppoll", "samplebardata", "sampletitles"]
 }

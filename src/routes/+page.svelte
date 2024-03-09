@@ -1,12 +1,7 @@
 <script>
 	import Chart from '../components/chart.svelte';
 	import { onMount } from 'svelte';
-
-	const samplebardata = [22, 1, 3, 5, 2];
-	const sampletitles = ['Mr Smith', 'Mrs. Krabapple', 'Miss Hoover', 'Principle Skinner', 'Maya'];
-
 	import { Bar } from 'svelte-chartjs';
-	import { data } from '../components/data.js';
 	// import { bardata as chartstore } from '$lib/stores/data';
 	import { bardata } from '$lib/stores/data';
 	import { Pencil, EraserFill } from 'svelte-bootstrap-icons';
@@ -24,65 +19,9 @@
 
 	ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
-	// function newvote(index) {
-	// 	console.log('newvote', index);
-	// 	if (bardata[index] !== undefined) {
-	// 		bardata[index] = bardata[index] + 1;
-	// 		data.datasets[0].data = bardata;
-	// 		window.localStorage.setItem('bardata', JSON.stringify(bardata));
-	// 		bardata = bardata;
-	// 	}
-	// }
-
-	// function clearvotes(index) {
-	// 	console.log('clearvotes', index);
-	// 	data.datasets[0].data = bardata;
-	// 	bardata[index] = 0;
-	// 	window.localStorage.setItem('bardata', JSON.stringify(bardata));
-	// 	bardata = bardata;
-	// }
-
-	// function addnew() {
-	// 	console.log('addnew');
-	// 	titles.push('NEW');
-	// 	bardata.push(0);
-	// 	data.datasets[0].data = bardata;
-	// 	data.labels = titles;
-	// 	titles = titles;
-	// 	bardata = bardata;
-	// 	window.localStorage.setItem('bardata', JSON.stringify(bardata));
-	// 	window.localStorage.setItem('titles', JSON.stringify(titles));
-	// }
-
-	// function remove() {
-	// 	console.log('remove');
-	// 	titles.pop();
-	// 	bardata.pop();
-	// 	titles = titles;
-	// 	bardata = bardata;
-	// 	data.datasets[0].data = bardata;
-	// 	data.labels = titles;
-	// 	window.localStorage.setItem('bardata', JSON.stringify(bardata));
-	// 	window.localStorage.setItem('titles', JSON.stringify(titles));
-	// }
-
-	// function loadsample(testdata) {
-	// 	console.log('load sample data', testdata);
-	// 	bardata = structuredClone(samplebardata);
-	// 	titles = structuredClone(sampletitles);
-	// 	data.datasets[0].data = bardata;
-	// 	data.labels = titles;
-	// 	window.localStorage.clear();
-	// 	window.localStorage.setItem('bardata', JSON.stringify(bardata));
-	// 	window.localStorage.setItem('titles', JSON.stringify(titles));
-	// 	// console.log('load sample data', samplebardata, sampletitles, bardata, titles);
-	// }
-
 	onMount(() => {
 		bardata.loadSavedData();
-
 		//chart.update();
-
 		window.addEventListener('keypress', (event) => {
 			if (event.key >= 1 && event.key <= 9) {
 				bardata.vote(event.key - 1);
@@ -101,8 +40,6 @@
 			<Bar data={$bardata} options={{ responsive: true }} />
 			<!-- <Bar bind:chart {data} options={{ responsive: true }} /> -->
 		{/if}
-
-		<!-- {@debug(titles)} -->
 
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
 			<!-- {#each titles as name, index} -->
