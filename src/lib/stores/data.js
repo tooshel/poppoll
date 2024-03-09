@@ -122,6 +122,13 @@ export const bardata = {
 				return $data;
 			}
 
+			if (Array.isArray(window?.localStorage)) {
+				bardata.loadSampleData();
+				console.error('old bardata - loading sample data');
+				$data.loaded = true;
+				return $data;
+			}
+
 			const savedData = window.localStorage.getItem('bardata');
 			if (savedData) {
 				console.log('bardata - loaded saved data', savedData);
