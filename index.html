@@ -9,13 +9,14 @@
 	
 		
 		<link href="./_app/immutable/assets/0.EhSbE1CH.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.DVejLhi9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.CxP_7c5l.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.D2RCA68x.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.C67r1Ztv.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.DzxrJN5e.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.DvcHF0NY.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.CLvfiUGH.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.BO1SDq1V.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.DxTABXDW.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.3dhUEGBk.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.BrcNoPN1.js"><title>Pop Poll</title><!-- HEAD_svelte-1nhpo4k_START --><!-- HEAD_svelte-1nhpo4k_END -->
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.Dervf2S0.js"><title>Pop Poll</title><!-- HEAD_svelte-1nhpo4k_START --><!-- HEAD_svelte-1nhpo4k_END -->
 
 	</head>
 	<meta name="theme-color" content="#712cf9">
@@ -215,17 +216,19 @@
 		  <div class="row">
 			<div class="col-sm-8 col-md-7 py-4">
 			  <h4>About</h4>
-			  <p class="text-body-secondary">Made by Sheldon for Trish. Trish: "Hey Sheldon! I loved that button you made for your <a href="https://www.hallowingo.com/">Hallowingo</a> app. You think we could use buttons for a voting app on our Pi Day event?"  Me: Maybe! Let me see if bootstrap and jquery are still around!</p>
-			  <p class="text-body-secondary"> Use a bit of Arduino code to turn an Arduino board into a keyboard. There are samples in the Arduino IDE that can get you started there. Have it send a keyboard event (numbers 1-5 for now) when the button is pressed.</p>
-			  <p class="text-body-secondary"> Your votes are stored in local storage so you can reload and still see the votes. Yes, we need a clear all. And yes, we need a way to customize things. More comming soon if there is interest.</p>
+			  <p class="text-body-secondary">Made by Sheldon for Trish. Trish: "Hey Sheldon! I loved that button you made for your <a target="_blank" href="https://www.hallowingo.com/">Hallowingo</a> app. You think we could use buttons for a voting app on our Pi Day event?"  Me: Maybe! Let me see if bootstrap and jQuery are still around!</p>
+			  <p class="text-body-secondary"> Use a bit of Arduino code to turn an Arduino board into a keyboard. See <a target="_blank" href="https://github.com/tooshel/poppoll/tree/main/firmware">/firmware</a> in the github repo. Numbers 1-9 will vote!</p>
+			  <p class="text-body-secondary"> Your votes are stored in local storage. This is just served up from Github pages as a static application. Read more about it at the <a target="_blank" href="https://github.com/tooshel/poppoll/blob/main/README.md">README.md</a> on github. </p>
 			</div>
 			<div class="col-sm-4 offset-md-1 py-4">
 			  <h4>Contact</h4>
 			  <ul class="list-unstyled">
-				<li><a href="https://bsky.app/profile/tooshel.bsky.social" class="text-white">@tooshel Blue Sky</a></li>
-				<li><a href="https://fosstodon.org/@tooshel" class="text-white">@tooshel Mastodon</a></li>
-				<li><a href="https://twitter.com/tooshel" class="text-white">@tooshel Twitter</a></li>
-				<li><a href="mailto:sheldon@tooshel.com" class="text-white">Email me</a></li>
+				<li><a target="_blank" href="https://bsky.app/profile/tooshel.bsky.social" class="text-white">@tooshel Blue Sky</a></li>
+				<li><a target="_blank" href="https://fosstodon.org/@tooshel" class="text-white">@tooshel Mastodon</a></li>
+				<li><a target="_blank" href="https://twitter.com/tooshel" class="text-white">@tooshel Twitter</a></li>
+				<li><a target="_blank" href="https://github.com/tooshel/" class="text-white">@tooshel Github</a></li>
+				<li><a target="_blank" href="https://github.com/tooshel/poppoll/" class="text-white">This project on Github</a></li>
+				<li><a target="_blank" href="mailto:sheldon@tooshel.com" class="text-white">Email me</a></li>
 			  </ul>
 			</div>
 		  </div>
@@ -235,7 +238,7 @@
 		<div class="container">
 		  <a href="#" class="navbar-brand d-flex align-items-center">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-			<strong>Vote!</strong>
+			<strong>Pop Poll</strong>
 		  </a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -259,11 +262,11 @@
 		  </div>
 		</section> -->
 	  
-	<div style="display: contents">   <div class="album py-5 bg-body-tertiary"><div class="container"><canvas></canvas>  <button>count: 0</button> <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3"></div> <button type="button" class="btn btn-primary btn-space m-1" data-svelte-h="svelte-hpu23l">Add</button> <button type="button" class="btn btn-secondary btn-space m-1" data-svelte-h="svelte-abgqnj">Remove</button> <button type="button" class="btn btn-secondary m-1" data-svelte-h="svelte-j7hqba">Sample</button></div></div> 
+	<div style="display: contents">   <div class="album py-5 bg-body-tertiary"><div class="container">  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3"> </div> <button type="button" class="btn btn-primary btn-space m-1" data-svelte-h="svelte-1l6stik">Add</button> <button type="button" class="btn btn-secondary btn-space m-1" data-svelte-h="svelte-1fh3ty1">Remove</button> <button type="button" class="btn btn-secondary m-1" data-svelte-h="svelte-tzv2oi">Sample</button></div></div> 
 			
 			<script>
 				{
-					__sveltekit_7kmif0 = {
+					__sveltekit_1sdzfsl = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/poppoll"
 					};
@@ -273,8 +276,8 @@
 					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.DVejLhi9.js"),
-						import("./_app/immutable/entry/app.DvcHF0NY.js")
+						import("./_app/immutable/entry/start.D2RCA68x.js"),
+						import("./_app/immutable/entry/app.BO1SDq1V.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
