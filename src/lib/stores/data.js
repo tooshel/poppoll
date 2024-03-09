@@ -122,10 +122,10 @@ export const bardata = {
 				return $data;
 			}
 
-			if (Array.isArray(window?.localStorage)) {
+			if (window?.localStorage.titles) {
+				window?.localStorage.clear();
 				bardata.loadSampleData();
 				console.error('old bardata - loading sample data');
-				$data.loaded = true;
 				return $data;
 			}
 
