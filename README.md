@@ -16,7 +16,7 @@ So I followed the "create-svelte-app" tutorial and here we are!
 
 # Hosting
 
-For now it's just a simple github page. I might get it a domain someday but I already have 50 unused domain names.
+For now it's just hosted on github as a static page. I might get it a domain someday but I already have 50 unused domain names.
 
 [Try it here](https://tooshel.github.io/poppoll/)
 
@@ -39,3 +39,21 @@ I programmed an Arduino compatible board to act as a keyboard and just output a 
 # Storage
 
 The votes are stored to localStorage and no where else. There is no server for this project and it's all just served up by a simple Github page. All your data is stored in localStorage and nowhere else.
+
+# Local Dev
+
+This is just a static svelte site so if you know svelte (or anything node/js based, you'll be able to figure it out) but here is a hint:
+
+`clone the repo, run npm install`
+
+Start the dev enviroment. Look at the help to see you can press o enter to open it in a web browser.
+
+`npm run dev `
+
+Use this to build the prod version
+
+`npm run build`
+
+Use this to deploy it as a github page to the gh-pages branch
+
+`npm publish`

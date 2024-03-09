@@ -1,3 +1,8 @@
+/*
+Many thanks to Drew (@aewing) for the original code and inspiration for this file. He submitted the first PR to this project https://github.com/tooshel/poppoll/pull/1/files and I only closed it after copying this file and then rewriting every other file to take advantage of this new store so that I would be forced to understand every line of code in the project and specifically how this file worked. 
+
+It was also a Typescript file and as I was reading though it, the places I was most confused turned out to be becuase it was Typescript. It's really cool that with Svelte, you can mix and match TS and JS but I wanted to stick with just JS for this project.
+*/
 import { writable } from 'svelte/store';
 
 export const samplebardata = [22, 1, 3, 5, 2];
