@@ -2,11 +2,9 @@
 
 This is a really simple Svelte based project meant to satisfy a simple request from a friend. It started with a different name (also in github!) using a Bootstrap template, jQuery, and Chart.js. That was built in a few hours and since this was something that was going to be used once a year at a 2 hour event that should have been the end. But like every developer, I started daydreaming that this was my first million dollar idea.
 
-```
 Trish: "Hey Sheldon! I loved that button you made for your Hallowingo app. You think we could use buttons for a voting app on our Pi Day event?"
 
 Me: (to myself) No way! The button connected to a web app and I just slightly modified that app and made it my own! There is no way something like this exists for me to "use". (to her) Maybe! Let me see if Bootstrap and jQuery are still around!
-```
 
 The basic prototype in jQuery worked great! But it had some shortcomings. For one, I had hard coded all the labels and text. The only real variable was an array of numbers that stored the number of votes. Every year the names would change! And what if someone else wanted to use this? And what if there were more or less participants? It was easy enough to edit the one main file and change that around and it even auto deployed to github pages so that was one option. If I wanted a regular user to be able to edit it, I would have to go further.
 
