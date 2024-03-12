@@ -54,12 +54,25 @@ export const bardata = {
 		});
 	},
 
+	setName(index, namevalue) {
+		update(($data) => {
+			if ($data.datasets[0].data[index] !== undefined) {
+				console.log('bardata - changing the name for index:', index);
+				$data.labels[index] = namevalue;
+			} else {
+				console.error('bardata - name index not found:', index);
+			}
+			bardata.persist();
+			return $data;
+		});
+	},
+
 	clearVotes(index) {
 		update(($data) => {
-			if (index && $data.datasets[0].data[index] !== undefined) {
+			if ($data.datasets[0].data[index] !== undefined) {
 				console.log('bardata - clearing votes for index:', index);
 				$data.datasets[0].data[index] = 0;
-			} else if (!index) {
+			} else if (index === -1) {
 				console.log('bardata - clearing all votes');
 				$data.datasets[0].data = $data.datasets[0].data.map(() => 0);
 			} else {

@@ -1,11 +1,13 @@
 <script>
-	import Chart from '../components/chart.svelte';
+	// import Chart from '../components/chart.svelte';
 	import { onMount } from 'svelte';
 	import { Bar } from 'svelte-chartjs';
 	// import { bardata as chartstore } from '$lib/stores/data';
 	import { bardata } from '$lib/stores/data';
 	import { Pencil, EraserFill } from 'svelte-bootstrap-icons';
 
+	import EditModal from '../components/edit.svelte';
+	let showModal = false;
 	// import Chart from 'chart.js/auto';
 	import {
 		Chart as ChartJS,
@@ -28,6 +30,15 @@
 			}
 		});
 	});
+
+	let editIndex;
+	let editName;
+	function editModal(index, oldname) {
+		editIndex = index;
+		editName = oldname;
+		console.log('editModal', index, oldname);
+		showModal = true;
+	}
 </script>
 
 <svelte:head>
@@ -40,6 +51,12 @@
 			<Bar data={$bardata} options={{ responsive: true }} />
 			<!-- <Bar bind:chart {data} options={{ responsive: true }} /> -->
 		{/if}
+
+		<EditModal bind:showModal bind:editIndex bind:editName>
+			<h2 slot="header">
+				<em>Update Name</em>
+			</h2>
+		</EditModal>
 
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
 			<!-- {#each titles as name, index} -->
@@ -78,7 +95,13 @@
 										class="btn btn-sm btn-outline-secondary btn-space"
 										on:click={() => bardata.clearVotes(index)}><EraserFill /></button
 									>
-									<button type="button" class="btn btn-sm btn-outline-secondary"><Pencil /></button>
+									<button
+										data-id={index}
+										type="button"
+										class="btn btn-sm btn-outline-secondary btn-space"
+										on:click={() => editModal(index, $bardata.labels[index])}
+										><Pencil />
+									</button>
 								</div>
 								<!-- <small class="text-body-secondary">9 mins</small> -->
 							</div>
