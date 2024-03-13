@@ -10,10 +10,10 @@ export const sampletitles = ['Ms. Olsen', 'Mr. W.', 'Mr. Kinder', 'Ms. Chapman',
 
 const { set, subscribe, update } = writable({
 	loaded: false,
-	labels: [],
+	labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 	datasets: [
 		{
-			label: '% of Votes',
+			label: 'Count of Votes',
 			data: [],
 			backgroundColor: [
 				'rgba(255, 134,159,0.4)',
@@ -23,7 +23,7 @@ const { set, subscribe, update } = writable({
 				'rgba(170, 128, 252,0.4)',
 				'rgba(255, 177, 101,0.4)'
 			],
-			borderWidth: 2,
+			borderWidth: 4,
 			borderColor: [
 				'rgba(255, 134, 159, 1)',
 				'rgba(98,  182, 239, 1)',
