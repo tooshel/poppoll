@@ -132,7 +132,8 @@
 							></svg
 						>
 						<div class="card-body">
-							<p class="card-text">{name}</p>
+							<!-- <p class="card-text"><strong>{name}</strong></p> -->
+							<h5><strong>{name}</strong></h5>
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
 									<button
