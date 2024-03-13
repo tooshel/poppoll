@@ -9,11 +9,11 @@
 	
 		
 		<link href="../_app/immutable/assets/0.EhSbE1CH.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.Brd-NB1a.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/entry.CVg0V16t.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DbJAw_zf.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.bw2tQ64t.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.DzxrJN5e.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.CLvfiUGH.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.BkJFq9vD.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.n9cD3Qz1.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.hSem3FnA.js">
 		<link rel="modulepreload" href="../_app/immutable/nodes/0.B-2kTG_i.js">
 		<link rel="modulepreload" href="../_app/immutable/nodes/3.BRRr9vf9.js">
@@ -148,10 +148,15 @@
 		.btn-space {
 		  margin-right: 5px;
 		}
-  
-		#myChart {
-		  max-height: 50vh;
+/*   
+		#piChart {
+		  max-height: 100px;
 		}
+
+		#barChart {
+		  max-height: 50vh;
+		} 
+*/
 	  </style>
 	</head>
 
@@ -266,7 +271,7 @@ This is in the about file
 			
 			<script>
 				{
-					__sveltekit_1ofymsb = {
+					__sveltekit_99crjy = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						assets: "/poppoll"
 					};
@@ -276,8 +281,8 @@ This is in the about file
 					const data = [{"type":"data","data":null,"uses":{},"slash":"always"},null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.Brd-NB1a.js"),
-						import("../_app/immutable/entry/app.BkJFq9vD.js")
+						import("../_app/immutable/entry/start.DbJAw_zf.js"),
+						import("../_app/immutable/entry/app.n9cD3Qz1.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
