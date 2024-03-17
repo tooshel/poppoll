@@ -5,7 +5,7 @@ USBKeyboard Keyboard;
 #include <EduIntro.h>
 
 // change this to the key you want to press
-char* keyboardPress = "2";
+//char* keyboardPress = "2";
 
 //Button Pin (digiital pins for the button library)
 Button button(D4);
@@ -20,6 +20,6 @@ void setup() {
 
 void loop() {
   if (button.pressed()) {
-    Keyboard.printf("3");
+    Keyboard.printf("6");
   }
 }
