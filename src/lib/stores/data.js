@@ -5,8 +5,15 @@ It was also a Typescript file and as I was reading though it, the places I was m
 */
 import { writable } from 'svelte/store';
 
-export const samplebardata = [22, 1, 3, 5, 2];
-export const sampletitles = ['Ms. Olsen', 'Mr. W.', 'Mr. Kinder', 'Ms. Chapman', 'Ms. Hale'];
+export const samplebardata = [22, 1, 3, 5, 2, 2];
+export const sampletitles = [
+	'Ms. Williams',
+	'Ms. Olsen\n(Principal)',
+	'Ms. Bergeson\n(VP)',
+	'Ms. Moffett',
+	'Ms. Mulhearn',
+	'Mr. W \n(counselor)'
+];
 
 const { set, subscribe, update } = writable({
 	loaded: false,
