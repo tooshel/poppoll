@@ -58,6 +58,12 @@ Use this to build the prod version
 
 `npm run build`
 
+# Deploy
+
+Globally install the gh-pages package . . then
+
+`npm run build`
+
 Use this to deploy it as a github page to the gh-pages branch
 
-`npm publish`
+`npm run deploy`

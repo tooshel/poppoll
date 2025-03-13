@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"deploy": "gh-pages -d build -t true"
+		"deploy": "gh-pages -d build "
 	},
 	"devDependencies": {
 		"@popperjs/core": "^2.11.8",
