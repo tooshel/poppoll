@@ -14,8 +14,10 @@ export const sampletitles = [
 	'Ms. Mulhearn',
 	'Mr. W \n(counselor)'
 ];
+export const samplePollName = 'Who should get the pie?';
 
 const { set, subscribe, update } = writable({
+	pollname: 'Pop Poll v6',
 	loaded: false,
 	labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 	datasets: [
@@ -120,7 +122,9 @@ export const bardata = {
 		update(($data) => {
 			console.log('bardata - loading sample data');
 			$data.labels = sampletitles;
+			$data.polename = samplePollName;
 			$data.datasets[0].data = samplebardata;
+			console.log('bardata - loading sample data', $data);
 			return $data;
 		});
 	},
