@@ -12,8 +12,10 @@
 	let saveName = () => {
 		if (isEditingPollName) {
 			bardata.setPollName(dialog.querySelector('input').value);
+			console.log('setPollName');
 		} else {
 			bardata.setName(editIndex, dialog.querySelector('input').value);
+			console.log('setName');
 		}
 		closeModal();
 	};

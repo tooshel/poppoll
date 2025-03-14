@@ -138,11 +138,7 @@
 	</div>
 </div>
 
-<EditModal bind:showModal bind:editIndex bind:editName>
-	<h2 slot="header">
-		<em>Update Name</em>
-	</h2>
-</EditModal>
+<EditModal bind:showModal bind:editIndex bind:editName></EditModal>
 <div class="album py-5 bg-body-tertiary">
 	<div class="container">
 		<div class="row row-cols-4 mb-5 g-3">
