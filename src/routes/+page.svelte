@@ -40,6 +40,13 @@
 		showModal = true;
 	}
 
+	function editPollNameModal() {
+		editIndex = -1;
+		editName = $bardata.pollname;
+		console.log('editPollNameModal', editName);
+		showModal = true;
+	}
+
 	function getColors(index) {
 		if (index > 5) {
 			return {
@@ -99,6 +106,12 @@
 				/><circle cx="12" cy="13" r="4" /></svg
 			>
 			<strong>{$bardata.pollname || 'Pop Poll'}</strong>
+			<button
+				type="button"
+				class="btn btn-sm btn-outline-light ms-2"
+				on:click={editPollNameModal}
+				><Pencil />
+			</button>
 		</a>
 		<button
 			class="navbar-toggler"

@@ -65,7 +65,10 @@ export const bardata = {
 
 	setName(index, namevalue) {
 		update(($data) => {
-			if ($data.datasets[0].data[index] !== undefined) {
+			if (index === -1) {
+				console.log('bardata - changing poll name to:', namevalue);
+				$data.pollname = namevalue;
+			} else if ($data.datasets[0].data[index] !== undefined) {
 				console.log('bardata - changing the name for index:', index);
 				$data.labels[index] = namevalue;
 			} else {
