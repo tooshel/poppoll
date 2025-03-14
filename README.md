@@ -1,6 +1,26 @@
 # Pop Poll
 
-This is a really simple Svelte based project meant to satisfy a simple request from a friend. It started with a different name (also in github!) using a Bootstrap template, jQuery, and Chart.js. That was built in a few hours and since this was something that was going to be used once a year at a 2 hour event that should have been the end. But like every developer, I started daydreaming that this was my next million dollar idea.
+This is a really simple Svelte based project meant to satisfy a simple request from a friend. It started with a different name (also in github!) using a Bootstrap template, jQuery, and Chart.js. That was built in a few hours and since this was something that was going to be used once a year at a 2 hour event that should have been the end. But like every developer, I started daydreaming that this was my next million dollar idea. So I re-made it in svelte and added a bunch of features.
+
+# Features
+
+- Edit the poll name
+- Edit the button names
+- Erase votes for buttons
+- Load sample data
+- Add and remove buttons (6 with colors!)
+- Numbers 1-9 will add a vote. Connect your own buttons connect to an [Arduino board](https://github.com/tooshel/poppoll/firmware) that act as a keyboard!
+
+# Hints
+
+- Double-click on the poll name in the navbar to toggle the edit buttons and clean up the UI a bit and minimize mistakes.
+- Go into full screen! And use ctrl plus and minus to make it fit the screen!
+
+# Media
+
+Here is a picture from the 2025 STEM event where I used this project last. This was before adding the new feature of editing the name of the poll!
+
+<img src="./tv2025.jpg" width="500"/>
 
 # More Backstory
 
