@@ -131,6 +131,12 @@
 	</div>
 </div>
 
+<style>
+	.hidden {
+		display: none !important;
+	}
+</style>
+
 <EditModal bind:showModal bind:editIndex bind:editName>
 	<h2 slot="header">
 		<em>Update Name</em>
