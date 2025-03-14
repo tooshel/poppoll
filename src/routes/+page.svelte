@@ -141,7 +141,7 @@
 				.length} row-cols-xl-{$bardata.labels.length} g-3"
 		>
 			<!-- {#each titles as name, index} -->
-			{$bardata.pollname}
+			<h3 class="mb-3">{$bardata.pollname || 'Pop Poll'}</h3>
 			{#each $bardata.labels as name, index}
 				<div class="col">
 					<div class="card shadow-sm">

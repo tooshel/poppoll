@@ -122,7 +122,7 @@ export const bardata = {
 		update(($data) => {
 			console.log('bardata - loading sample data');
 			$data.labels = sampletitles;
-			$data.polename = samplePollName;
+			$data.pollname = samplePollName;
 			$data.datasets[0].data = samplebardata;
 			console.log('bardata - loading sample data', $data);
 			return $data;
