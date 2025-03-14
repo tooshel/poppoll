@@ -1,0 +1,18 @@
+
+# 2025-03-13 23:39:22.384945
++n
+
+# 2025-03-13 23:40:18.854081
++on line 144 of +page.svelte, there you see {$bardata.pollname} but it's returning undefined. why? also, you can check in lib/stores/data to see how that looks
+
+# 2025-03-13 23:46:19.119780
++okay, using those files, and the same patteryn you see for editing items on that page, I want to add the "edit" button to line 101 and that should open a dialog like the others to allow you to edit the pollname
+
+# 2025-03-14 00:18:53.856646
++I want to hide all of the "edit" buttons when I go to chrome full screen. I tried to add some css for it on the app.html file but that didn't work . . . and ideas?
+
+# 2025-03-14 00:28:56.460357
++that didn't work . . . when I go full screen, the buttons are still there. maybe we can make an element that I can secrfeetly click on, like that title, that would hide all the buttons/
+
+# 2025-03-14 00:37:36.931172
++we should also save the fact they are hidden in the store so they'll be hidden on a reload. put a new property to keep track of it it right after the pollname in lib/stores/data

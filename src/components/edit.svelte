@@ -10,11 +10,12 @@
 	let closeModal = () => (showModal = false);
 
 	let saveName = () => {
-		bardata.setName(editIndex, dialog.querySelector('input').value);
+		bardata.setName(dialog.querySelector('input').value);
 		closeModal();
 	};
 
 	$: if (dialog && showModal) dialog.showModal();
+	$: isEditingPollName = editIndex === -1;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -22,7 +23,9 @@
 <dialog bind:this={dialog} on:close={closeModal} on:click|self={() => dialog.close()}>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
-		<slot name="header" />
+		<slot name="header">
+			<h2><em>{isEditingPollName ? 'Update Poll Name' : 'Update Name'}</em></h2>
+		</slot>
 		<hr />
 		<slot />
 		<form method="dialog">

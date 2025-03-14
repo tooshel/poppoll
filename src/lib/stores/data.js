@@ -14,8 +14,11 @@ export const sampletitles = [
 	'Ms. Mulhearn',
 	'Mr. W \n(counselor)'
 ];
+export const samplePollName = 'Who should get the pie?';
 
 const { set, subscribe, update } = writable({
+	pollname: 'Pop Poll v6',
+	hideButtons: false,
 	loaded: false,
 	labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 	datasets: [
@@ -61,14 +64,19 @@ export const bardata = {
 		});
 	},
 
-	setName(index, namevalue) {
+	setName(namevalue) {
 		update(($data) => {
-			if ($data.datasets[0].data[index] !== undefined) {
-				console.log('bardata - changing the name for index:', index);
-				$data.labels[index] = namevalue;
-			} else {
-				console.error('bardata - name index not found:', index);
-			}
+			console.log('bardata - changing poll name to:', namevalue);
+			$data.pollname = namevalue;
+			bardata.persist();
+			return $data;
+		});
+	},
+
+	toggleHideButtons() {
+		update(($data) => {
+			$data.hideButtons = !$data.hideButtons;
+			console.log('bardata - toggling button visibility:', $data.hideButtons);
 			bardata.persist();
 			return $data;
 		});
@@ -120,7 +128,10 @@ export const bardata = {
 		update(($data) => {
 			console.log('bardata - loading sample data');
 			$data.labels = sampletitles;
+			$data.pollname = samplePollName;
 			$data.datasets[0].data = samplebardata;
+			console.log('bardata - loading sample data', $data);
+			//bardata.persist();
 			return $data;
 		});
 	},
