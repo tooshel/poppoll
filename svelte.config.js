@@ -11,6 +11,17 @@ const config = {
 		adapter: adapter(),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/poppoll' : ''
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Don't fail the build when a path doesn't match the base path
+				if (message.includes('does not begin with `base`')) {
+					console.warn(`Warning: ${message}`);
+					return;
+				}
+				// Otherwise fail the build
+				throw new Error(message);
+			}
 		}
 	},
 
