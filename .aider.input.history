@@ -16,3 +16,25 @@
 
 # 2025-03-14 00:37:36.931172
 +we should also save the fact they are hidden in the store so they'll be hidden on a reload. put a new property to keep track of it it right after the pollname in lib/stores/data
+
+# 2025-03-14 01:09:22.690880
++when I run npm run build, I get thie error from svelte
+
+# 2025-03-14 01:09:28.951939
++
++node:internal/event_target:1090
++  process.nextTick(() => { throw err; });
++                           ^
++Error: 404 / does not begin with `base`, which is configured in `paths.base` and can be imported from `$app/paths` - see https://kit.svelte.dev/docs/configuration#paths for more info (linked from /poppoll/)
++To suppress or handle this error, implement `handleHttpError` in https://kit.svelte.dev/docs/configuration#prerender
++    at file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/config/options.js:202:13
++    at file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/postbuild/prerender.js:65:25
++    at visit (file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/postbuild/prerender.js:195:4)
++    at Object.fn (file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/postbuild/prerender.js:184:22)
++    at dequeue (file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/postbuild/queue.js:40:42)
++    at file:///C:/Sites/poppoll/node_modules/@sveltejs/kit/src/core/postbuild/queue.js:49:7
++
++Node.js v22.10.0
+
+# 2025-03-14 01:10:15.995580
++n
