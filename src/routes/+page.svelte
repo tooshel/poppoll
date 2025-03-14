@@ -98,7 +98,7 @@
 					d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
 				/><circle cx="12" cy="13" r="4" /></svg
 			>
-			<strong>Pop Poll</strong>
+			<strong>{$bardata.pollname || 'Pop Poll'}</strong>
 		</a>
 		<button
 			class="navbar-toggler"
@@ -141,7 +141,6 @@
 				.length} row-cols-xl-{$bardata.labels.length} g-3"
 		>
 			<!-- {#each titles as name, index} -->
-			<h3 class="mb-3">{$bardata.pollname || 'Pop Poll'}</h3>
 			{#each $bardata.labels as name, index}
 				<div class="col">
 					<div class="card shadow-sm">
