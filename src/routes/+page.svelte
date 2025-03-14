@@ -33,8 +33,6 @@
 
 	let editIndex;
 	let editName;
-	let hideButtons = false;
-	
 	function editModal(index, oldname) {
 		editIndex = index;
 		editName = oldname;
@@ -50,8 +48,7 @@
 	}
 	
 	function toggleButtons() {
-		hideButtons = !hideButtons;
-		console.log('Buttons hidden:', hideButtons);
+		bardata.toggleHideButtons();
 	}
 
 	function getColors(index) {
@@ -113,7 +110,7 @@
 				/><circle cx="12" cy="13" r="4" /></svg
 			>
 			<strong on:dblclick={toggleButtons} style="cursor: pointer;" title="Double-click to toggle buttons">{$bardata.pollname || 'Pop Poll'}</strong>
-			<button type="button" class="btn btn-sm btn-outline-light ms-2" class:hidden={hideButtons} on:click={editPollNameModal}
+			<button type="button" class="btn btn-sm btn-outline-light ms-2" class:hidden={$bardata.hideButtons} on:click={editPollNameModal}
 				><Pencil />
 			</button>
 		</a>
@@ -197,20 +194,20 @@
 									<button
 										type="button"
 										class="btn btn-sm btn-outline-primary btn-space"
-										class:hidden={hideButtons}
+										class:hidden={$bardata.hideButtons}
 										on:click={() => bardata.vote(index)}>Vote!</button
 									>
 									<button
 										type="button"
 										class="btn btn-sm btn-outline-secondary btn-space"
-										class:hidden={hideButtons}
+										class:hidden={$bardata.hideButtons}
 										on:click={() => bardata.clearVotes(index)}><EraserFill /></button
 									>
 									<button
 										data-id={index}
 										type="button"
 										class="btn btn-sm btn-outline-secondary btn-space"
-										class:hidden={hideButtons}
+										class:hidden={$bardata.hideButtons}
 										on:click={() => editModal(index, $bardata.labels[index])}
 										><Pencil />
 									</button>
@@ -228,13 +225,13 @@
 				<button
 					type="button"
 					class="btn btn-outline-secondary btn-space m-1"
-					class:hidden={hideButtons}
+					class:hidden={$bardata.hideButtons}
 					on:click={bardata.create}>Add</button
 				>
 				<button
 					type="button"
 					class="btn btn-outline-secondary btn-space m-1"
-					class:hidden={hideButtons}
+					class:hidden={$bardata.hideButtons}
 					on:click={bardata.remove}>Remove</button
 				>
 			</div>
@@ -242,7 +239,7 @@
 				<button
 					type="button"
 					class="btn btn-outline-secondary m-1"
-					class:hidden={hideButtons}
+					class:hidden={$bardata.hideButtons}
 					on:click={bardata.loadSampleData}>Sample</button
 				>
 			</div>

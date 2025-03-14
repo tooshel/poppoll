@@ -18,6 +18,7 @@ export const samplePollName = 'Who should get the pie?';
 
 const { set, subscribe, update } = writable({
 	pollname: 'Pop Poll v6',
+	hideButtons: false,
 	loaded: false,
 	labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
 	datasets: [
@@ -67,6 +68,15 @@ export const bardata = {
 		update(($data) => {
 			console.log('bardata - changing poll name to:', namevalue);
 			$data.pollname = namevalue;
+			bardata.persist();
+			return $data;
+		});
+	},
+
+	toggleHideButtons() {
+		update(($data) => {
+			$data.hideButtons = !$data.hideButtons;
+			console.log('bardata - toggling button visibility:', $data.hideButtons);
 			bardata.persist();
 			return $data;
 		});
