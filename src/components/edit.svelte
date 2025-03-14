@@ -10,7 +10,11 @@
 	let closeModal = () => (showModal = false);
 
 	let saveName = () => {
-		bardata.setName(dialog.querySelector('input').value);
+		if (isEditingPollName) {
+			bardata.setPollName(dialog.querySelector('input').value);
+		} else {
+			bardata.setName(editIndex, dialog.querySelector('input').value);
+		}
 		closeModal();
 	};
 

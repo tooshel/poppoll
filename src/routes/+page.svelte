@@ -89,10 +89,10 @@
 <svelte:head>
 	<title>Pop Poll</title>
 </svelte:head>
-
+<link id="home" />
 <div class="navbar navbar-dark bg-dark shadow-sm">
 	<div class="container">
-		<a href="#home" class="navbar-brand d-flex align-items-center">
+		<a href="#" class="navbar-brand d-flex align-items-center">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="20"
