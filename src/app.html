@@ -149,14 +149,36 @@
 		} 
 */
 
-		@media (fullscreen) {
-          .btn {
-            display: none;
-          }
-        }
-
-		:fullscreen input[type="button"] {
- 		   display: none !important;
+		/* Hide edit buttons in fullscreen mode */
+		:fullscreen .btn-outline-light,
+		:fullscreen .btn-outline-secondary,
+		:fullscreen .btn-outline-primary,
+		:fullscreen .btn-group .btn {
+			display: none !important;
+		}
+		
+		/* For webkit browsers */
+		:-webkit-full-screen .btn-outline-light,
+		:-webkit-full-screen .btn-outline-secondary,
+		:-webkit-full-screen .btn-outline-primary,
+		:-webkit-full-screen .btn-group .btn {
+			display: none !important;
+		}
+		
+		/* For Firefox */
+		:-moz-full-screen .btn-outline-light,
+		:-moz-full-screen .btn-outline-secondary,
+		:-moz-full-screen .btn-outline-primary,
+		:-moz-full-screen .btn-group .btn {
+			display: none !important;
+		}
+		
+		/* For MS browsers */
+		:-ms-fullscreen .btn-outline-light,
+		:-ms-fullscreen .btn-outline-secondary,
+		:-ms-fullscreen .btn-outline-primary,
+		:-ms-fullscreen .btn-group .btn {
+			display: none !important;
 		}
 
 </style>
