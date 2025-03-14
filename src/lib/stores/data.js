@@ -63,17 +63,10 @@ export const bardata = {
 		});
 	},
 
-	setName(index, namevalue) {
+	setName(namevalue) {
 		update(($data) => {
-			if (index === -1) {
-				console.log('bardata - changing poll name to:', namevalue);
-				$data.pollname = namevalue;
-			} else if ($data.datasets[0].data[index] !== undefined) {
-				console.log('bardata - changing the name for index:', index);
-				$data.labels[index] = namevalue;
-			} else {
-				console.error('bardata - name index not found:', index);
-			}
+			console.log('bardata - changing poll name to:', namevalue);
+			$data.pollname = namevalue;
 			bardata.persist();
 			return $data;
 		});
@@ -128,6 +121,7 @@ export const bardata = {
 			$data.pollname = samplePollName;
 			$data.datasets[0].data = samplebardata;
 			console.log('bardata - loading sample data', $data);
+			//bardata.persist();
 			return $data;
 		});
 	},

@@ -83,7 +83,7 @@
 </script>
 
 <svelte:head>
-	<title>{bardata.pollname}</title>
+	<title>Pop Poll</title>
 </svelte:head>
 
 <div class="navbar navbar-dark bg-dark shadow-sm">
@@ -106,10 +106,7 @@
 				/><circle cx="12" cy="13" r="4" /></svg
 			>
 			<strong>{$bardata.pollname || 'Pop Poll'}</strong>
-			<button
-				type="button"
-				class="btn btn-sm btn-outline-light ms-2"
-				on:click={editPollNameModal}
+			<button type="button" class="btn btn-sm btn-outline-light ms-2" on:click={editPollNameModal}
 				><Pencil />
 			</button>
 		</a>
@@ -176,7 +173,7 @@
 								y="50%"
 								fill={getColors(index).foreground}
 								font
-								dy=".3em">{$bardata.datasets?.[0]?.data?.[index]}</text
+								dy=".3em">{$bardata.datasets?.[0]?.data?.[index] || ''}</text
 							></svg
 						>
 						<div class="card-body">
