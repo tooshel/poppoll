@@ -92,6 +92,7 @@
 <link id="home" />
 <div class="navbar navbar-dark bg-dark shadow-sm">
 	<div class="container">
+		<!-- svelte-ignore a11y-invalid-attribute -->
 		<a href="#" class="navbar-brand d-flex align-items-center">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
